@@ -98,5 +98,5 @@ var <- baz(a = 2, b = `%b%`)
 
 # Conclusion
 
-I won't talk much about challenges as I have overcome most of them in my previous assignments, but the main one being is R is not a programming language that should be used for this kind of tasks. It is made for data analysis, where its quirks are features not bugs. This experience definitely made me 100% times better at R, its list manipulations, debugging, shell scripting, and many other things. My tears and sweat were not for nothing. I think they should teach program analysis at monasteries as to test their patience and belief.
+I won't talk much about challenges as I have overcome most of them in my previous assignments, but the main one being is R is not a programming language that should be used for this kind of tasks. It is made for data analysis, where its quirks are features not bugs. This experience definitely made me 100% times better at R, its list manipulations, debugging, shell scripting, and many other things. My tears and sweat were not for nothing.
 
