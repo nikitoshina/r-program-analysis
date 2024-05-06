@@ -86,7 +86,9 @@ var <- baz(a = 2, b = `%b%`)
 
 # Tests
 
-I have created multiple tests you can access at the GitHub repository: [https://github.com/nikitoshina/r-program-analysis](https://github.com/nikitoshina/r-program-analysis)
+I have created multiple tests you can access at the GitHub repository:
+
+[https://github.com/nikitoshina/r-program-analysis](https://github.com/nikitoshina/r-program-analysis)
 
 1. `simple_definitions` tests variable definitions with `<-`.
 2. `function_definitions.r` tests functions using global variables available at the point of function call.
