@@ -8,7 +8,7 @@ patat:
   margins:
     left: 10
     right: 10
-    top: 5
+    top: 2
   transition:
     type: slideLeft
   theme:
@@ -25,15 +25,13 @@ patat:
 - **Existing Solutions:** Limited availability of program analyzers for R; only a partially functioning language server and an imperfect R linter found.
 - **Resources:** The most helpful resource was the "Expressions" chapter in "Advanced R" by Hadley Wickham, providing a foundation with examples and necessary functions for the analysis.
 
-# Methodology
-
-## Challenges Encountered
+# Challenges Encountered
 
 - **Functions:** Must account for variables undefined at the point of function definition but used when the function is called.
 - **External Packages:** Using `library()` to attach packages requires all functions from the package to be considered defined.
 - **Data Frames and Built-in Datasets:** Requires stubs for common functions to manage quoted and unquoted arguments effectively due to complications with data frames and built-in datasets.
 
-## Analysis Implementation
+# Analysis Implementation
 
 - **Parsing and AST Conversion:** Starts by parsing an `file.r` into expressions and converting them into an AST.
 - **Variable Store:** Maintains a single store for all available variables and logs issues related to undefined variables in an error store.
@@ -45,9 +43,7 @@ patat:
 
 - **Outcome:** Successfully identifies variables that are defined and undefined, marking undefined variables with `%` for clarity.
 
-# Example
-
-## R Script
+# Example -- R Script
 
 ```r
 foo <- function(a, b) {
@@ -74,8 +70,6 @@ bop <- function() {
 baz(1, var)
 ```
 
-## Output
-
 ```
 3 : constant
 ------------------------------------------------------------
@@ -89,6 +83,15 @@ baz(1, var)
 ------------------------------------------------------------
 var <- baz(a = 2, b = `%b%`)
 ```
+
+# Tests
+
+I have created multiple tests you can access at the GitHub repository: [https://github.com/nikitoshina/r-program-analysis](https://github.com/nikitoshina/r-program-analysis)
+
+1. `simple_definitions` tests variable definitions with `<-`.
+2. `function_definitions.r` tests functions using global variables available at the point of function call.
+3. `library_dataset.r` tests loading libraries with `library()`, `::`, and using built-in datasets.
+4. `source_file.r` tests sourcing files with `source('source-1.r')`, which then sources `source-2.r`.
 
 # Conclusion
 
